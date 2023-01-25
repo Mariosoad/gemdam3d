@@ -120,7 +120,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <a href="#team" className="hoverUnderlineAnim">Team</a> <br></br>
         <a href="#aumented" className="hoverUnderlineAnim">AR</a> <br></br>
         <a href="#virtual" className="hoverUnderlineAnim">VR</a> <br></br>
-        <a href="#desarrollos-web+" className="hoverUnderlineAnim">Web</a> <br></br>
+        <a href="#desarrollos-web" className="hoverUnderlineAnim">Web</a> <br></br>
         <a href="#conctacto" className="hoverUnderlineAnim">Contacto</a> <br></br>
       </div>
     </div>
