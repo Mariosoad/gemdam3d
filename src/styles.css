@@ -1,0 +1,238 @@
+@import url("https://rsms.me/inter/inter.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(-45deg, rgb(0, 0, 0), rgb(21, 21, 21), rgb(60, 60, 60), rgb(70, 70, 70));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+
+  position: fixed;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  font-family: "Inter var", sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+html,
+body,
+#root,
+.scroll {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  overflow: hidden;
+}
+
+#root {
+  overflow: auto;
+}
+
+.scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
+}
+
+.scroll>div {
+  scroll-snap-align: start;
+}
+
+
+.caption {
+  pointer-events: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 80px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 100;
+  line-height: 1em;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: auto;
+}
+
+.dot {
+  pointer-events: none;
+  position: sticky;
+  top: 0px;
+  display: inline-block;
+  max-width: 650px;
+  padding: 0;
+  padding: 80px;
+  color: #c5c5c5;
+  text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+  line-height: 1.6em;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.enlace-pages {
+  text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+  color: #c5c5c5 !important;
+  text-decoration: none !important;
+  pointer-events: auto;
+  z-index: 9999;
+  text-align: right;
+}
+
+.enlace-pages a {
+  color: #c5c5c5 !important;
+  text-decoration: none !important;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+
+.dot>h1 {
+  -webkit-font-smoothing: auto;
+  pointer-events: none;
+  color: white;
+  font-size: 5em;
+  font-weight: 100;
+  line-height: 1em;
+  margin: 0;
+  margin-bottom: 0.25em;
+}
+
+@media only screen and (max-width: 1000px) {
+  .caption {
+    font-size: 4em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .caption {
+    font-size: 3em;
+  }
+
+  .dot>h1 {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .caption {
+    font-size: 2em;
+  }
+
+  .dot>h1 {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .caption {
+    font-size: 1em;
+  }
+
+  .dot>h1 {
+    font-size: 3em;
+  }
+}
+
+.foto-founder {
+  border-radius: 50%;
+  filter: grayscale();
+}
+
+/*HOVER*/
+.hoverUnderlineAnim {
+  margin: 2 px 0px;
+  font-weight: 400;
+  color: #575755 !important;
+  padding-bottom: 1px;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.hoverUnderlineAnim:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #2cddcf;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hoverUnderlineAnim:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/*HOVER*/
+
+.input-contacto{
+  width: 100%;
+  height: 35px;
+  color: #c5c5c5;
+  margin-bottom: 5px;
+  border: none !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid white !important;
+  z-index: 99999;
+  pointer-events: auto;
+  outline: none !important;
+}
+
+.input-contacto::placeholder{
+  color: rgb(142, 142, 142) !important;
+}
+
+.area{
+  height: 150px;
+  resize: none;
+}
+
+.copyright{
+  z-index: 99999;
+  pointer-events: auto;
+
+  font-size: 0.7em;
+  color: #c5c5c5;
+  text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .dot{
+    width: 100%;
+    padding: 30px;
+    font-size: 13px;
+  }
+
+  .enlace-pages{
+    display: none;
+  }
+}
