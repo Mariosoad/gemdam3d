@@ -32,7 +32,6 @@ body {
   }
 }
 
-
 html,
 body,
 #root,
@@ -107,11 +106,10 @@ body,
   z-index: 9999;
 }
 
-
 .dot>h1 {
   -webkit-font-smoothing: auto;
   pointer-events: none;
-  color: white;
+  color: #2cddcf;
   font-size: 5em;
   font-weight: 100;
   line-height: 1em;
@@ -119,9 +117,40 @@ body,
   margin-bottom: 0.25em;
 }
 
+.dot .tittle-gemdam {
+  -webkit-font-smoothing: auto;
+  pointer-events: none;
+  color: #2cddcf;
+  font-size: 7em;
+  font-weight: 200;
+  line-height: 1em;
+  margin: 0;
+  margin-bottom: 0.25em;
+  text-shadow: 0 0 5px rgb(177 177 177);
+}
+
+.dot .subtittle {
+  -webkit-font-smoothing: auto;
+  pointer-events: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.6em;
+  letter-spacing: 1.5px;
+  margin: 0;
+  margin-bottom: 0.25em;
+  text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+}
+
 @media only screen and (max-width: 1000px) {
   .caption {
     font-size: 4em;
+  }
+  .dot .tittle-gemdam  {
+    font-size: 4em;
+  }
+  .dot .subtittle {
+    font-size: 14px;
   }
 }
 
@@ -162,7 +191,7 @@ body,
 
 /*HOVER*/
 .hoverUnderlineAnim {
-  margin: 2 px 0px;
+  margin: 4px 0px;
   font-weight: 400;
   color: #575755 !important;
   padding-bottom: 1px;
@@ -196,7 +225,6 @@ body,
   width: 100%;
   height: 35px;
   color: #c5c5c5;
-  margin-bottom: 5px;
   border: none !important;
   background-color: transparent !important;
   border-bottom: 1px solid white !important;
@@ -209,15 +237,60 @@ body,
   color: rgb(142, 142, 142) !important;
 }
 
+.error{
+  margin: 0px !important;
+  padding: 0px !important;
+  font-size: 0.85em;
+  font-weight: 300;
+  line-height: 1em;
+  color: red !important;
+  text-shadow: 0 0 5px rgba(89, 89, 89, 0.5);
+
+  pointer-events: auto;
+  z-index: 99999;
+}
+
+.container-enviar{
+  width: 100%;
+  text-align: right;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-enviar{
+  font-size: 1em;
+  color: #c5c5c5;
+  border: 1px solid #c5c5c535;
+  padding:  12px 18px;
+  background-color: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 99999;
+  backdrop-filter:blur(20px);
+  letter-spacing: 1.5px;
+}
+
+.button-enviar:hover{
+  color: #2cddcf;
+  border: 1px solid #2cddce3e;
+}
+
 .area{
   height: 150px;
   resize: none;
 }
 
+.container-form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
 .copyright{
   z-index: 99999;
   pointer-events: auto;
-
+  margin-top: 80px;
   font-size: 0.7em;
   color: #c5c5c5;
   text-shadow: 0 0 5px rgb(131 131 131 / 50%);

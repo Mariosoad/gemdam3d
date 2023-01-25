@@ -1,6 +1,153 @@
 import React, { forwardRef } from "react"
 import fotoRodri from "./media/rori.jpg"
 import fotoMario from "./media/mario.png"
+import { useForm, Controller } from "react-hook-form";
+
+function enviarMail() {
+  axios.post("http://serviciosapi1.alfabeta.net/alfabetaws/basews", data, config)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function Formulario() {
+
+  // ENVIAR FORMULARIO
+  const locale = {
+    noResultsText: "No existen resultados",
+    placeholder: "",
+    searchPlaceholder: "Buscar...",
+    checkAll: "",
+    yesterday: "Ayer",
+    today: "Hoy",
+    dateLocale: "es_AR",
+  };
+  const {
+    register,
+    formState: { errors },
+    getValues,
+    handleSubmit,
+    reset,
+    control,
+  } = useForm({
+    mode: "onChange",
+  });
+  const onSubmit = (data) => {
+    enviarMail(data)
+  };
+
+  return (
+    <>
+      <form onSubmit={handleSubmit(onSubmit)} className="container-form">
+
+        <Controller
+          name="nombre"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { ref, ...field } }) => (
+            <input
+              className="input-contacto"
+              {...field}
+              locale={locale}
+              placeholder="Nombre y apellido"
+              inputRef={ref}
+            />
+          )}
+        />
+        {errors.nombre && (<p className="error">Campo requerido</p>)}
+
+        <Controller
+          name="telefono"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { ref, ...field } }) => (
+            <input
+              className="input-contacto"
+              {...field}
+              locale={locale}
+              placeholder="Teléfono"
+              inputRef={ref}
+            />
+          )}
+        />
+        {errors.telefono && (<p className="error">Campo requerido</p>)}
+
+        <Controller
+          name="email"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { ref, ...field } }) => (
+            <input
+              className="input-contacto"
+              {...field}
+              locale={locale}
+              placeholder="Correo electrónico"
+              inputRef={ref}
+            />
+          )}
+        />
+        {errors.email && (<p className="error">Campo requerido</p>)}
+
+        <Controller
+          name="empresa"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { ref, ...field } }) => (
+            <input
+              className="input-contacto"
+              {...field}
+              locale={locale}
+              placeholder="Empresa"
+              inputRef={ref}
+            />
+          )}
+        />
+        {errors.empresa && (<p className="error">Campo requerido</p>)}
+
+        <Controller
+          name="asunto"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { ref, ...field } }) => (
+            <input
+              className="input-contacto"
+              {...field}
+              locale={locale}
+              placeholder="Asunto"
+              inputRef={ref}
+            />
+          )}
+        />
+        {errors.asunto && (<p className="error">Campo requerido</p>)}
+
+        <Controller
+          name="mensaje"
+          control={control}
+          rules={{ required: true }}
+          render={({ field: { ref, ...field } }) => (
+            <textarea
+              className="input-contacto area"
+              {...field}
+              locale={locale}
+              placeholder="Mensaje"
+              inputRef={ref}
+            ></textarea>
+          )}
+        />
+        {errors.mensaje && (<p className="error">Campo requerido</p>)}
+        <br></br>
+
+        <div className="container-enviar">
+          <button className="button-enviar" type="submit" > Enviar </button>
+        </div>
+      </form>
+    </>
+  )
+}
+
 
 const Overlay = forwardRef(({ caption, scroll }, ref) => (
   <div
@@ -12,13 +159,16 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     class="scroll">
     <div id="gemdam" style={{ height: "400vh" }}>
       <div class="dot">
-        <h1> GEMDAM </h1>
-        Creamos soluciones útiles, creativas e innovadoras que resuelvan todo tipo de problemas y se ajusten a tus requisitos.
+        <h1 className="tittle-gemdam"> GEMDAM </h1>
+        <br></br><br></br>
+        <p className="subtittle">Creamos soluciones útiles, creativas e innovadoras que resuelvan todo
+          tipo de problemas y se ajusten a tus requisitos.</p>
       </div>
     </div>
     <div id="nosotros" style={{ height: "200vh" }}>
       <div class="dot">
         <h1>Nosotros</h1>
+        <br></br><br></br>
         Somos una compañía dinámica y experta en la creación de experiencias digitales que busca transformar la comunicación estratégica dentro de las empresas
         y en relación con sus clientes, para dar un salto de calidad en el ámbito cognitivo. Para esto desarrollamos propuestas capaces de mejorar los resultados
         comerciales de cada marca y su relevancia, mediante un mejor posicionamiento en el mercado y un crecimiento de valor a lo largo de su ciclo de vida.
@@ -33,9 +183,9 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     <div id="team" style={{ height: "200vh" }}>
       <div class="dot">
         <h1> Team </h1>
-        <br></br>
-        <img className="foto-founder" width={100} height={100} src={fotoMario} />
+        <br></br><br></br>
 
+        <img className="foto-founder" width={100} height={100} src={fotoMario} />
         <h3>Mario Hinostroza</h3>
         CO-FOUNDER & CEO <br></br>
         Programador, diseñador multimedia,
@@ -45,9 +195,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <br></br><br></br>
 
         <img className="foto-founder" width={100} height={100} src={fotoRodri} />
-
         <h3>Rodrigo Isasmendi</h3>
-        CO-FOUNDER & 3D ARTIST <br></br>
+        CO-FOUNDER & ENVIRONMENT ARTIST <br></br>
         Programador, diseñador multimedia,
         tester de videojuegos y un estratega
         en la tecnología para mejorar la experiencia de vida
@@ -56,6 +205,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     <div id="aumented" style={{ height: "200vh" }}>
       <div class="dot">
         <h1>Augmented Reality</h1>
+        <br></br><br></br>
         La realidad aumentada tiene infinidad de aplicaciones con las que se innova día tras día y se logra llevar proyectos y empresas a un mayor desempeño.
         La principal ventaja de la realidad aumentada yace en la facilidad que ésta otorga para el intercambio de información entre sus usuarios, ya sea entre la empresa y sus trabajadores,
         o hacia los clientes, ya que permite la visualización de información en tiempo real sobre el mismo entorno, facilitando tareas, explicaciones y procesos de comunicación.
@@ -66,19 +216,17 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     <div id="virtual" style={{ height: "200vh" }}>
       <div class="dot">
         <h1>Virtual Reality</h1>
+        <br></br><br></br>
         La realidad virtual es un entorno digital inmersivo en el cual podemos sumergirnos a través de cascos o gafas de realidad virtual y la ayuda de otros dispositivos,
         para vivir experiencias únicas, al igual que simulaciones de entornos y situaciones hasta donde llegue tu imaginación. Es un nuevo medio
         para la creación de contenido y un nuevo canal de comunicación, por lo que es una opción nueva e ideal para la optimización de las comunicaciones tanto internas
         como externas de una empresa,facilitando el desarrollo de actividades, además de reducir sus tiempos y costos.
-        <br></br><br></br>
-        Esta tecnología se encuentra disponible en una amplia variedad de plataformas que se adaptan a la necesidad de cada cliente.
-        <br></br><br></br>¿Cuál es ideal para tu negocio?
-
       </div>
     </div>
     <div id="desarrollos-web" style={{ height: "200vh" }}>
       <div class="dot">
         <h1>Desarrollo Web</h1>
+        <br></br><br></br>
         Trabajamos codo a codo con nuestros clientes
         para lograr la mejor estrategia de comunicación
         acorde a las necesidades del negocio.
@@ -96,13 +244,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     <div id="conctacto" style={{ height: "200vh" }}>
       <div class="dot">
         <h1>Contacto</h1>
-        <br></br>
-        <input className="input-contacto" placeholder="Nombre y apellido" /> <br></br><br></br>
-        <input className="input-contacto" placeholder="Correo electrónico" /> <br></br><br></br>
-        <input className="input-contacto" placeholder="Empresa" /> <br></br><br></br>
-        <input className="input-contacto" placeholder="Asunto" /> <br></br><br></br>
-        <textarea className="input-contacto area" placeholder="Mensaje" ></textarea> <br></br><br></br>
-
+        <br></br><br></br>
+        <Formulario />
         <div className="copyright">
           © 2023, GEMDAM STUDIO. Todos los derechos reservados.
         </div>
