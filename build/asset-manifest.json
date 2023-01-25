@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.574a16c0.css",
-    "main.js": "/static/js/main.0aebf79a.js",
+    "main.css": "/static/css/main.8930358a.css",
+    "main.js": "/static/js/main.8bdebf43.js",
     "static/media/mario.png": "/static/media/mario.ef56a140958d049c6bcc.png",
     "static/media/rori.jpg": "/static/media/rori.575320ac6e8b68278581.jpg",
     "index.html": "/index.html",
-    "main.574a16c0.css.map": "/static/css/main.574a16c0.css.map",
-    "main.0aebf79a.js.map": "/static/js/main.0aebf79a.js.map"
+    "main.8930358a.css.map": "/static/css/main.8930358a.css.map",
+    "main.8bdebf43.js.map": "/static/js/main.8bdebf43.js.map"
   },
   "entrypoints": [
-    "static/css/main.574a16c0.css",
-    "static/js/main.0aebf79a.js"
+    "static/css/main.8930358a.css",
+    "static/js/main.8bdebf43.js"
   ]
 }
