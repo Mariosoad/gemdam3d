@@ -142,13 +142,28 @@ body,
   text-shadow: 0 0 5px rgb(131 131 131 / 50%);
 }
 
+.container-enviar .subtittle {
+  -webkit-font-smoothing: auto;
+  pointer-events: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.3em;
+  letter-spacing: 1.5px;
+  margin: 0;
+  margin-bottom: 0.25em;
+  text-shadow: 0 0 6px rgb(0, 255, 247);
+}
+
 @media only screen and (max-width: 1000px) {
   .caption {
     font-size: 4em;
   }
-  .dot .tittle-gemdam  {
+
+  .dot .tittle-gemdam {
     font-size: 4em;
   }
+
   .dot .subtittle {
     font-size: 14px;
   }
@@ -221,7 +236,7 @@ body,
 
 /*HOVER*/
 
-.input-contacto{
+.input-contacto {
   width: 100%;
   height: 35px;
   color: #c5c5c5;
@@ -233,15 +248,15 @@ body,
   outline: none !important;
 }
 
-.input-contacto::placeholder{
+.input-contacto::placeholder {
   color: rgb(142, 142, 142) !important;
 }
 
-.input-contacto:focus{
+.input-contacto:focus {
   background-color: transparent !important;
 }
 
-.error{
+.error {
   margin: 0px !important;
   padding: 0px !important;
   font-size: 0.85em;
@@ -254,7 +269,7 @@ body,
   z-index: 99999;
 }
 
-.container-enviar{
+.container-enviar {
   width: 100%;
   text-align: right;
   align-items: flex-end;
@@ -262,36 +277,36 @@ body,
   flex-direction: column;
 }
 
-.button-enviar{
+.button-enviar {
   font-size: 1em;
   color: #c5c5c5;
   border: 1px solid #c5c5c535;
-  padding:  12px 18px;
+  padding: 12px 18px;
   background-color: transparent;
   cursor: pointer;
   pointer-events: auto;
   z-index: 99999;
-  backdrop-filter:blur(20px);
+  backdrop-filter: blur(20px);
   letter-spacing: 1.5px;
 }
 
-.button-enviar:hover{
+.button-enviar:hover {
   color: #2cddcf;
   border: 1px solid #2cddce3e;
 }
 
-.area{
+.area {
   height: 150px;
   resize: none;
 }
 
-.container-form{
+.container-form {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
 }
 
-.copyright{
+.copyright {
   z-index: 99999;
   pointer-events: auto;
   margin-top: 80px;
@@ -303,13 +318,13 @@ body,
 
 @media only screen and (max-width: 768px) {
 
-  .dot{
+  .dot {
     width: 100%;
     padding: 30px;
     font-size: 13px;
   }
 
-  .enlace-pages{
+  .enlace-pages {
     display: none;
   }
 }

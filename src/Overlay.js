@@ -1,20 +1,27 @@
-import React, { forwardRef } from "react"
+import React, { useState, forwardRef } from "react"
 import fotoRodri from "./media/rori.jpg"
 import fotoMario from "./media/mario.png"
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 
+
 function enviarMail(data) {
+
+
   axios.post("http://gemdam.com/webApi/public/contacto", data)
     .then(function (response) {
       console.log(response.data);
+      setMensajeFormulario(true)
     })
     .catch(function (error) {
       console.log(error);
+      setMensajeFormulario(false)
     });
 }
 
 function Formulario() {
+
+  const [mensajeFormulario, setMensajeFormulario] = useState(false);
 
   // ENVIAR FORMULARIO
   const locale = {
@@ -143,9 +150,16 @@ function Formulario() {
         {errors.mensaje && (<p className="error">Campo requerido</p>)}
         <br></br>
 
-        <div className="container-enviar">
-          <button className="button-enviar" type="submit" > Enviar </button>
-        </div>
+
+        {mensajeFormulario == true ?
+          <div className="container-enviar">
+            <p className="subtittle"> Mensaje enviado! </p>
+          </div>
+          :
+          <div className="container-enviar">
+            <button className="button-enviar" type="submit" > Enviar </button>
+          </div>
+        }
       </form>
     </>
   )
