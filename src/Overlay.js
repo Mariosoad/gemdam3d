@@ -2,9 +2,10 @@ import React, { forwardRef } from "react"
 import fotoRodri from "./media/rori.jpg"
 import fotoMario from "./media/mario.png"
 import { useForm, Controller } from "react-hook-form";
+import axios from "axios";
 
-function enviarMail() {
-  axios.post("http://serviciosapi1.alfabeta.net/alfabetaws/basews", data, config)
+function enviarMail(data) {
+  axios.post("http://gemdam.com/webApi/public/contacto", data)
     .then(function (response) {
       console.log(response.data);
     })
@@ -61,6 +62,7 @@ function Formulario() {
 
         <Controller
           name="telefono"
+          type="number"
           control={control}
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
@@ -81,6 +83,7 @@ function Formulario() {
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
             <input
+              type="email"
               className="input-contacto"
               {...field}
               locale={locale}
@@ -185,7 +188,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <h1> Team </h1>
         <br></br><br></br>
 
-        <img className="foto-founder" width={100} height={100} src={fotoMario} />
+        <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752608/GEMDAM/mario_vvix9l.png" />
         <h3>Mario Hinostroza</h3>
         CO-FOUNDER & CEO <br></br>
         Programador, diseñador multimedia,
@@ -194,7 +197,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
 
         <br></br><br></br>
 
-        <img className="foto-founder" width={100} height={100} src={fotoRodri} />
+        <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752609/GEMDAM/rori_mzbthw.jpg" />
         <h3>Rodrigo Isasmendi</h3>
         CO-FOUNDER & ENVIRONMENT ARTIST <br></br>
         Programador, diseñador multimedia,
