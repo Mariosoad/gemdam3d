@@ -4,24 +4,25 @@ import fotoMario from "./media/mario.png"
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 
+var mensajeFormulario = false;
 
 function enviarMail(data) {
-
 
   axios.post("http://gemdam.com/webApi/public/contacto", data)
     .then(function (response) {
       console.log(response.data);
-      setMensajeFormulario(true)
+      mensajeFormulario = true;
+      setTimeout(() => {
+        mensajeFormulario = false;
+      }, 6000);
     })
     .catch(function (error) {
       console.log(error);
-      setMensajeFormulario(false)
+      mensajeFormulario = false;
     });
 }
 
 function Formulario() {
-
-  const [mensajeFormulario, setMensajeFormulario] = useState(false);
 
   // ENVIAR FORMULARIO
   const locale = {
@@ -46,6 +47,8 @@ function Formulario() {
   const onSubmit = (data) => {
     enviarMail(data)
   };
+
+  console.log(mensajeFormulario)
 
   return (
     <>
