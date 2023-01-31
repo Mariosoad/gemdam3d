@@ -8,7 +8,7 @@ var mensajeFormulario = false;
 
 function enviarMail(data) {
 
-  axios.post("http://gemdam.com/webApi/public/contacto", data)
+  axios.post("https://gemdam.com/webApi/public/contacto", data)
     .then(function (response) {
       console.log(response.data);
       mensajeFormulario = true;
