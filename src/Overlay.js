@@ -217,9 +217,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752609/GEMDAM/rori_mzbthw.jpg" />
         <h3>Rodrigo Isasmendi</h3>
         CO-FOUNDER & ENVIRONMENT ARTIST <br></br>
-        Programador, diseñador multimedia,
-        tester de videojuegos y un estratega
-        en la tecnología para mejorar la experiencia de vida
+        
       </div>
     </div>
     <div id="aumented" style={{ height: "200vh" }}>
