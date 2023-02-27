@@ -1,11 +1,22 @@
 import React from 'react'
+import { GrClose } from 'react-icons/gr';
 
-export default function ModalInfo(props) {
+
+export default function ModalGemdam(props) {
+
+    const modelito = props.setShowComponent;
+    const handleClose = (e) => {
+        modelito(false);
+    };
+
     return (
         <>
             <div className='container-info'>
-                <div class="dot">
-                    <h1>Nosotros</h1>
+                <div class="text">
+                    <div className='container-title'>
+                        <h1 className='tittle'>Gemdam</h1>
+                        <button onClick={(e) => modelito(false)}> <GrClose /> </button>
+                    </div>
                     <br></br><br></br>
                     Somos una compañía dinámica y experta en la creación de experiencias digitales que busca transformar la comunicación estratégica dentro de las empresas
                     y en relación con sus clientes, para dar un salto de calidad en el ámbito cognitivo. Para esto desarrollamos propuestas capaces de mejorar los resultados

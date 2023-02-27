@@ -7,7 +7,7 @@ import { useFrame } from "@react-three/fiber"
 
 const color = new THREE.Color()
 
-export default function Model({scroll, ...props }) {
+export default function Model({ scroll, ...props }) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF("/model.glb")
   const { actions } = useAnimations(animations, group)
@@ -37,7 +37,6 @@ export default function Model({scroll, ...props }) {
   const handleClick = (e) => {
     modelito(e.object.name);
   };
-
 
   return (
     <>

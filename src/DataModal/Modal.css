@@ -1,0 +1,80 @@
+.container-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(100px);
+    background: rgba(0, 0, 0, 0.40);
+    color: white !important;
+    transform: none !important;
+    z-index: 9999;
+    overflow-y: hidden !important;
+}
+
+.container-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-title button{
+    background-color: transparent;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+.container-title button svg{
+    font-size: 1.8em;
+    background-color: transparent;
+    filter: contrast(0.1);
+}
+
+.text {
+    position: sticky;
+    top: 0px;
+    display: inline-block;
+    max-width: 100%;
+    padding: 0;
+    padding: 80px;
+    color: #c5c5c5;
+    text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+    line-height: 1.6em;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+}
+
+.text .tittle {
+    -webkit-font-smoothing: auto;
+    color: #2cddcf;
+    font-size: 5em;
+    font-weight: 100;
+    line-height: 1em;
+    margin: 0;
+    margin-bottom: 0.25em;
+}
+
+@media only screen and (max-width: 700px) {
+    .caption {
+        font-size: 2em;
+    }
+
+    .text>h1 {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .caption {
+        font-size: 1em;
+    }
+
+    .text>h1 {
+        font-size: 3em;
+    }
+}

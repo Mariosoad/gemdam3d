@@ -3,6 +3,7 @@ import fotoRodri from "./media/rori.jpg"
 import fotoMario from "./media/mario.png"
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
+import { RxDoubleArrowDown } from 'react-icons/rx';
 
 var mensajeFormulario = false;
 
@@ -283,6 +284,11 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <a href="#desarrollos-web" className="hoverUnderlineAnim">Web</a> <br></br>
         <a href="#conctacto" className="hoverUnderlineAnim">Contacto</a> <br></br>
       </div>
+    </div>
+
+    <div className="scroll-to-view">
+      <p>Scroll para continuar</p>
+      <RxDoubleArrowDown />
     </div>
 
   </div>

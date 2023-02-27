@@ -8,8 +8,8 @@ body {
   background: linear-gradient(-45deg, rgb(0, 0, 0), rgb(21, 21, 21), rgb(60, 60, 60), rgb(70, 70, 70));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  backdrop-filter: blur(2px);
   height: 100vh;
-
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
@@ -56,6 +56,10 @@ body,
   scroll-snap-type: y proximity;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .scroll>div {
   scroll-snap-align: start;
 }
@@ -66,7 +70,7 @@ body,
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 80px;
+  margin: 40px;
   color: white;
   font-size: 1.1em;
   font-weight: 100;
@@ -155,23 +159,6 @@ body,
   text-shadow: 0 0 6px rgb(0, 255, 247);
 }
 
-.container-info{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(17px);
-  color: white !important;
-  transform: none !important;
-  z-index: 9999;
-  overflow-y: hidden !important;
-}
-
 @media only screen and (max-width: 1000px) {
   .caption {
     font-size: 4em;
@@ -219,6 +206,45 @@ body,
 .foto-founder {
   border-radius: 50%;
   filter: grayscale();
+}
+
+.scroll-to-view {
+  position: fixed;
+  bottom: 30px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.scroll-to-view p {
+  font-size: 12px;
+  margin: 0px !important;
+  font-weight: 400;
+  color: #c5c5c5 !important;
+  animation: arrow 4s ease infinite;
+}
+
+.scroll-to-view svg {
+  margin: 5px !important;
+  padding: 0px !important;
+  font-size: 18px;
+  font-weight: 400;
+  color: #c5c5c5 !important;
+  animation: arrow 2s ease infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }
 
 /*HOVER*/

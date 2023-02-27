@@ -3,7 +3,9 @@ import { Canvas } from "@react-three/fiber"
 import { Environment } from "@react-three/drei"
 import Model from "./Model"
 import Overlay from "./Overlay"
-import ModalInfo from "./ModalInfo"
+
+import ModalGemdam from "./DataModal/ModalGemdam"
+import ModalInfo from "./DataModal/ModalInfo"
 
 export default function App() {
   const overlay = useRef()
@@ -23,9 +25,16 @@ export default function App() {
           <Environment preset="city" />
         </Suspense>
       </Canvas>
-      
-      {showComponent == "Headphones" ?
-        <ModalInfo /> :
+
+      {showComponent == "VR_Headset" &&
+        <ModalGemdam setShowComponent={setShowComponent} />
+      }
+
+      {showComponent == "Headphones" &&
+        <ModalInfo setShowComponent={setShowComponent} />
+      }
+
+      {showComponent == false &&
         <Overlay ref={overlay} caption={caption} scroll={scroll} />
       }
     </>
