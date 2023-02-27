@@ -14,7 +14,7 @@ export default function ModalInfo(props) {
             <div className='container-info'>
                 <div class="text">
                     <div className='container-title'>
-                        <h1 className='tittle'>Nosotros 111</h1>
+                        <h1 className='tittle'>Nosotros</h1>
                         <button onClick={(e) => modelito(false)}>Close</button>
                     </div>
                     <br></br><br></br>
