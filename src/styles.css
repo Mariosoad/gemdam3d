@@ -70,7 +70,7 @@ body,
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 40px;
+  margin: 50px;
   color: white;
   font-size: 1.1em;
   font-weight: 100;
@@ -86,7 +86,7 @@ body,
   display: inline-block;
   max-width: 650px;
   padding: 0;
-  padding: 80px;
+  padding: 50px;
   color: #c5c5c5;
   text-shadow: 0 0 5px rgb(131 131 131 / 50%);
   line-height: 1.6em;

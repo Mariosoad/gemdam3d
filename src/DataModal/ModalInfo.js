@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Slider from './Slider';
 import "./Modal.css"
 
 export default function ModalInfo(props) {
@@ -11,7 +12,8 @@ export default function ModalInfo(props) {
 
     return (
         <>
-            <div className='container-info'>
+
+            {/* <div className='container-info'>
                 <div class="text">
                     <div className='container-title'>
                         <h1 className='tittle'>Nosotros</h1>
@@ -23,12 +25,12 @@ export default function ModalInfo(props) {
                     comerciales de cada marca y su relevancia, mediante un mejor posicionamiento en el mercado y un crecimiento de valor a lo largo de su ciclo de vida.
                     <ul>
                         <li>Valoramos la diversidad en un entorno abierto e inclusivo donde fomentamos la confianza y el trato respetuoso hacia cada individuo.</li><br></br>
-                        {/* <li>Buscamos generar lazos de confianza a través de éticas sólidas y honestas, comunicándonos de manera clara y tomando responsabilidad por nuestras acciones.</li> */}
                         <li>Ayudamos a nuestros clientes a establecerse como grandes empresas de valor y relevancia, capaces de crear relaciones fructíferas a largo plazo.</li><br></br>
                         <li>Acompañamos cada proyecto desde su inicio, partiendo de etapas de asesoramiento y desarrollo, hasta su lanzamiento, estando presentes a cada momento para brindar respuestas eficaces.</li>
                     </ul>
-                </div>
-            </div>
+                </div> 
+            </div> */}
+            
         </>
     )
 }

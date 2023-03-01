@@ -7,6 +7,8 @@ import Overlay from "./Overlay"
 import ModalGemdam from "./DataModal/ModalGemdam"
 import ModalInfo from "./DataModal/ModalInfo"
 
+import Slider from "./DataModal/Slider"
+
 export default function App() {
   const overlay = useRef()
   const caption = useRef()
@@ -14,11 +16,12 @@ export default function App() {
 
   const [showComponent, setShowComponent] = useState(false);
 
-  console.log(showComponent)
-
   return (
     <>
-      <Canvas shadows eventSource={document.getElementById("root")} eventPrefix="client">
+
+      <Slider />
+
+      {/* <Canvas shadows eventSource={document.getElementById("root")} eventPrefix="client">
         <ambientLight intensity={1} />
         <Suspense fallback={null}>
           <Model scroll={scroll} setShowComponent={setShowComponent} />
@@ -36,7 +39,7 @@ export default function App() {
 
       {showComponent == false &&
         <Overlay ref={overlay} caption={caption} scroll={scroll} />
-      }
+      } */}
     </>
   )
 }
