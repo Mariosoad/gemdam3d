@@ -240,10 +240,16 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
           como externas de una empresa,facilitando el desarrollo de actividades, además de reducir sus tiempos y costos.
         </div>
       </div>
+      {/* DESARROLLO WEB */}
       <div id="desarrollos-web" style={{ height: "200vh" }}>
         <div class="dot">
           <h1>Desarrollo Web</h1>
           <br></br><br></br>
+          A partir de un desarrollo web a medida puedes diferenciar y colocar tu empresa 
+          en una posición de ventaja respecto a la competencia, y optimizar la obtención de beneficios
+
+
+          {/* <br></br><br></br>
           Trabajamos codo a codo con nuestros clientes
           para lograr la mejor estrategia de comunicación
           acorde a las necesidades del negocio.
@@ -255,10 +261,11 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
           Realizamos webs autoadministrables ajustadas a la necesidad de cada cliente.
           <br></br><br></br>
           Contamos con servicio de diseño gráfico, para que nuestros clientes puedan desarrollar al máximo su negocio, logrando identidades potentes
-          para aumentar sus ventas.
+          para aumentar sus ventas. */}
+
         </div>
       </div>
-      <div id="conctacto" style={{ height: "200vh" }}>
+      <div id="contacto" style={{ height: "200vh" }}>
         <div class="dot">
           <h1>Contacto</h1>
           <br></br><br></br>
@@ -282,7 +289,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <a href="#aumented" className="hoverUnderlineAnim">AR</a> <br></br>
         <a href="#virtual" className="hoverUnderlineAnim">VR</a> <br></br>
         <a href="#desarrollos-web" className="hoverUnderlineAnim">Web</a> <br></br>
-        <a href="#conctacto" className="hoverUnderlineAnim">Contacto</a> <br></br>
+        <a href="#contacto" className="hoverUnderlineAnim">Contacto</a> <br></br>
       </div>
     </div>
 

@@ -48,7 +48,7 @@ export default function Model({ scroll, ...props }) {
           scale={[0.25, 0.25, 0.25]}
         >
           <mesh onClick={(e) => handleClick(e)} name="Headphones" geometry={nodes.Headphones.geometry} material={materials.M_Headphone} {...extras} />
-          <mesh name="Notebook" geometry={nodes.Notebook.geometry} material={materials.M_Notebook} {...extras} />
+          <mesh onClick={(e) => handleClick(e)} name="Notebook" geometry={nodes.Notebook.geometry} material={materials.M_Notebook} {...extras} />
           <mesh name="Rocket003" geometry={nodes.Rocket003.geometry} material={materials.M_Rocket} {...extras} />
           <mesh name="Roundcube001" geometry={nodes.Roundcube001.geometry} material={materials.M_Roundcube} {...extras} />
           <mesh name="Table" geometry={nodes.Table.geometry} material={materials.M_Table} {...extras} />

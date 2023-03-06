@@ -6,6 +6,7 @@ import Overlay from "./Overlay"
 
 import ModalGemdam from "./DataModal/ModalGemdam"
 import ModalInfo from "./DataModal/ModalInfo"
+import ModalWeb from "./DataModal/ModalWeb"
 
 import Slider from "./DataModal/Slider"
 
@@ -19,9 +20,9 @@ export default function App() {
   return (
     <>
 
-      <Slider />
+      {/* <Slider /> */}
 
-      {/* <Canvas shadows eventSource={document.getElementById("root")} eventPrefix="client">
+      <Canvas shadows eventSource={document.getElementById("root")} eventPrefix="client">
         <ambientLight intensity={1} />
         <Suspense fallback={null}>
           <Model scroll={scroll} setShowComponent={setShowComponent} />
@@ -37,9 +38,13 @@ export default function App() {
         <ModalInfo setShowComponent={setShowComponent} />
       }
 
+      {showComponent == "Notebook" &&
+        <ModalWeb setShowComponent={setShowComponent} />
+      }
+
       {showComponent == false &&
         <Overlay ref={overlay} caption={caption} scroll={scroll} />
-      } */}
+      }
     </>
   )
 }

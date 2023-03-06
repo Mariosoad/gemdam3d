@@ -40,8 +40,10 @@
     top: 0px;
     display: inline-block;
     max-width: 100%;
+    height: 100%;
+    overflow-y: scroll;
     padding: 0;
-    padding: 80px;
+    padding: 50px;
     color: #c5c5c5;
     text-shadow: 0 0 5px rgb(131 131 131 / 50%);
     line-height: 1.6em;
@@ -59,7 +61,71 @@
     margin-bottom: 0.25em;
 }
 
+.container-multimedia {
+    width: 100%;
+    overflow-y: scroll !important;
+    height: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container-multimedia .info {
+    width: 45%;
+}
+
+.media {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.media .img-style {
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+    filter: grayscale(0.9);
+}
+
+.button-form{
+    color: #c5c5c5;
+    text-decoration: none !important;
+}
+
+.button-close{
+    filter: invert();
+    font-size: 1.8em;
+    text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+}
+
 @media only screen and (max-width: 700px) {
+    .text .tittle {
+        font-size: 2em;
+    }
+
+    .text {
+        padding: 30px;
+    }
+
+    .media {
+        width: 100%;
+        margin: 30px 0px;
+    }
+
+    .container-multimedia {
+        width: 100%;
+        height: 100% !important;
+        flex-direction: column;
+    }
+
+    .container-multimedia .info {
+        width: 100%;
+    }
+
     .caption {
         font-size: 2em;
     }
@@ -74,8 +140,16 @@
         font-size: 1em;
     }
 
+    .text .tittle {
+        font-size: 2em;
+    }
+
     .text>h1 {
         font-size: 3em;
+    }
+
+    .text {
+        padding: 30px;
     }
 }
 
@@ -105,7 +179,7 @@
 
 
 
-html,
+/* html,
 body {
     min-height: 100%;
 }
@@ -117,7 +191,7 @@ body {
     background: #ece5d1;
     line-height: 1.4;
     overflow: hidden;
-}
+} */
 
 
 /*** canvas ***/
