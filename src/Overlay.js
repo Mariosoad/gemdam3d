@@ -244,25 +244,9 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       <div id="desarrollos-web" style={{ height: "200vh" }}>
         <div class="dot">
           <h1>Desarrollo Web</h1>
-          <br></br><br></br>
-          A partir de un desarrollo web a medida puedes diferenciar y colocar tu empresa 
-          en una posición de ventaja respecto a la competencia, y optimizar la obtención de beneficios
-
-
-          {/* <br></br><br></br>
-          Trabajamos codo a codo con nuestros clientes
-          para lograr la mejor estrategia de comunicación
-          acorde a las necesidades del negocio.
-          <br></br><br></br>
-          Realizamos programación a medida con el fin de
-          lograr propuestas en función de las necesidades
-          propuestas por nuestros clientes.
-          <br></br><br></br>
-          Realizamos webs autoadministrables ajustadas a la necesidad de cada cliente.
-          <br></br><br></br>
-          Contamos con servicio de diseño gráfico, para que nuestros clientes puedan desarrollar al máximo su negocio, logrando identidades potentes
-          para aumentar sus ventas. */}
-
+          <br></br>
+          <p> A partir de un desarrollo web a medida puedes diferenciar y colocar tu empresa
+            en una posición de ventaja respecto a la competencia, y optimizar la obtención de beneficios</p>
         </div>
       </div>
       <div id="contacto" style={{ height: "200vh" }}>

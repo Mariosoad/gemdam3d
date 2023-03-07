@@ -10,7 +10,7 @@ export default function ModalWeb(props) {
     const handleClose = (e) => {
         modelito(false);
     };
-
+    console.log(mobile)
     return (
         <>
             <div className='container-info'>
@@ -36,16 +36,17 @@ export default function ModalWeb(props) {
 
                             <p><b>Consultoria en comunicación digital</b></p>
                             <p>Trabajamos codo a codo con nuestros clientes para lograr una estrategia de comunicación
-                            eficiente, acorde a las necesidades de cada negocio.</p>
+                                eficiente, acorde a las necesidades de cada negocio.</p>
 
-                            <br></br> 
+                            <br></br>
                             <a href='#contacto' className="button-enviar button-form" onClick={(e) => modelito(false)}> Quiero más información! </a>
 
                             <br></br><br></br>
-                            {mobile &&
+                            {mobile == true ?
                                 <div className='media'>
                                     <img className='img-style' width={350} height={450} src='https://res.cloudinary.com/deushkfkk/image/upload/v1678140783/GEMDAM/dev-web_iu3ha5.jpg' />
                                 </div>
+                                : ''
                             }
                             <br></br><br></br>
 
@@ -62,12 +63,17 @@ export default function ModalWeb(props) {
                             <a href='#contacto' className="button-enviar button-form" onClick={(e) => modelito(false)}> Quiero más información! </a>
 
                         </div>
-                        <div className='media'>
-                            {!mobile &&
-                                <img className='img-style' width={350} height={450} src='https://res.cloudinary.com/deushkfkk/image/upload/v1678140783/GEMDAM/dev-web_iu3ha5.jpg' />
-                            }
-                            <img className='img-style' width={350} height={450} src='https://res.cloudinary.com/deushkfkk/image/upload/v1678141521/GEMDAM/woman-dev-web_khigbe.jpg' />
+                        <div className='container-media'>
+                            <div className='media'>
+                                {mobile == false ?
+                                    <img className='img-style' width={350} height={450} src='https://res.cloudinary.com/deushkfkk/image/upload/v1678140783/GEMDAM/dev-web_iu3ha5.jpg' />
+                                    : ''
+                                }
 
+                            </div>
+                            <div className='media'>
+                                <img className='img-style' width={350} height={450} src='https://res.cloudinary.com/deushkfkk/image/upload/v1678141521/GEMDAM/woman-dev-web_khigbe.jpg' />
+                            </div>
                         </div>
                     </div>
                 </div>
