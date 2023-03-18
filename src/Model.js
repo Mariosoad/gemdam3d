@@ -25,6 +25,7 @@ export default function Model({ scroll, ...props }) {
   useFrame((state) => {
     actions["CameraAction.005"].time = THREE.MathUtils.lerp(actions["CameraAction.005"].time, actions["CameraAction.005"].getClip().duration * scroll.current, 0.05)
     group.current.children[0].children.forEach((child, index) => {
+      //child.material.color.lerp(color.set(hovered === child.name ? "#1F9186" : "#202020"), hovered ? 0.1 : 0.15)
       child.material.color.lerp(color.set(hovered === child.name ? "#1F9186" : "#202020"), hovered ? 0.1 : 0.15)
       const et = state.clock.elapsedTime
       child.position.y = Math.sin((et + index * 2000) / 2) * 1
@@ -51,7 +52,7 @@ export default function Model({ scroll, ...props }) {
           <mesh onClick={(e) => handleClick(e)} name="Notebook" geometry={nodes.Notebook.geometry} material={materials.M_Notebook} {...extras} />
           <mesh name="Rocket003" geometry={nodes.Rocket003.geometry} material={materials.M_Rocket} {...extras} />
           <mesh name="Roundcube001" geometry={nodes.Roundcube001.geometry} material={materials.M_Roundcube} {...extras} />
-          <mesh name="Table" geometry={nodes.Table.geometry} material={materials.M_Table} {...extras} />
+          <mesh onClick={(e) => handleClick(e)} name="Table" geometry={nodes.Table.geometry} material={materials.M_Table} {...extras} />
           <mesh onClick={(e) => handleClick(e)} name="VR_Headset" geometry={nodes.VR_Headset.geometry} material={materials.M_Headset} {...extras} />
           <mesh name="Zeppelin" geometry={nodes.Zeppelin.geometry} material={materials.M_Zeppelin} />
 

@@ -5,16 +5,17 @@ import Model from "./Model"
 import Overlay from "./Overlay"
 
 import ModalGemdam from "./DataModal/ModalGemdam"
-import ModalInfo from "./DataModal/ModalInfo"
+import ModalNosotros from "./DataModal/ModalNosotros"
 import ModalWeb from "./DataModal/ModalWeb"
+import ModalVR from "./DataModal/ModalVr"
 
+import ModalInfo from "./DataModal/ModalInfo"
 import Slider from "./DataModal/Slider"
 
 export default function App() {
   const overlay = useRef()
   const caption = useRef()
   const scroll = useRef(0)
-
   const [showComponent, setShowComponent] = useState(false);
 
   return (
@@ -35,7 +36,11 @@ export default function App() {
       }
 
       {showComponent == "Headphones" &&
-        <ModalInfo setShowComponent={setShowComponent} />
+        <ModalNosotros setShowComponent={setShowComponent} />
+      }
+
+      {showComponent == "Table" &&
+        <ModalVR setShowComponent={setShowComponent} />
       }
 
       {showComponent == "Notebook" &&

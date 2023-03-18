@@ -16,7 +16,7 @@ export default function ModalWeb(props) {
             <div className='container-info'>
                 <div class="text">
                     <div className='container-title'>
-                        <h1 className='tittle'>DESARROLLO WEB</h1>
+                        <h1 className='tittle'>Desarrollo Web</h1>
                         <a className='button-close' href='#desarrollos-web' onClick={(e) => modelito(false)}> <GrClose /> </a>
                     </div>
                     <br></br><br></br>
@@ -38,7 +38,7 @@ export default function ModalWeb(props) {
                             <p>Trabajamos codo a codo con nuestros clientes para lograr una estrategia de comunicación
                                 eficiente, acorde a las necesidades de cada negocio.</p>
 
-                            <br></br>
+                            <br></br><br></br>
                             <a href='#contacto' className="button-enviar button-form" onClick={(e) => modelito(false)}> Quiero más información! </a>
 
                             <br></br><br></br>
@@ -51,7 +51,6 @@ export default function ModalWeb(props) {
                             <br></br><br></br>
 
                             <p><b>Beneficio para tu empresa</b></p>
-                            <br></br>
                             <ul>
                                 <li>Mejor posicionamiento en el mercado, con una presencia diferencial respecto a la competencia.</li><br></br>
                                 <li>Un diseño web destacable ayuda a la construcción de una identidad de marca fuerte.</li><br></br>
@@ -59,8 +58,9 @@ export default function ModalWeb(props) {
                                 <li>Mejor optimización de la usabilidad de la web, acorde a su preferencia.</li>
                             </ul>
 
-                            <br></br>
+                            <br></br><br></br>
                             <a href='#contacto' className="button-enviar button-form" onClick={(e) => modelito(false)}> Quiero más información! </a>
+                            <br></br><br></br><br></br>
 
                         </div>
                         <div className='container-media'>

@@ -188,15 +188,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <div class="dot">
           <h1>Nosotros</h1>
           <br></br><br></br>
-          Somos una compañía dinámica y experta en la creación de experiencias digitales que busca transformar la comunicación estratégica dentro de las empresas
-          y en relación con sus clientes, para dar un salto de calidad en el ámbito cognitivo. Para esto desarrollamos propuestas capaces de mejorar los resultados
-          comerciales de cada marca y su relevancia, mediante un mejor posicionamiento en el mercado y un crecimiento de valor a lo largo de su ciclo de vida.
-          <ul>
-            <li>Valoramos la diversidad en un entorno abierto e inclusivo donde fomentamos la confianza y el trato respetuoso hacia cada individuo.</li><br></br>
-            {/* <li>Buscamos generar lazos de confianza a través de éticas sólidas y honestas, comunicándonos de manera clara y tomando responsabilidad por nuestras acciones.</li> */}
-            <li>Ayudamos a nuestros clientes a establecerse como grandes empresas de valor y relevancia, capaces de crear relaciones fructíferas a largo plazo.</li><br></br>
-            <li>Acompañamos cada proyecto desde su inicio, partiendo de etapas de asesoramiento y desarrollo, hasta su lanzamiento, estando presentes a cada momento para brindar respuestas eficaces.</li>
-          </ul>
+          <p>Nuestro equipo multidisciplinario de profesionales está enfocado en llevar a cabo soluciones
+            tecnológicas innovadoras, que contribuyan a crear un futuro digital y cognitivo. </p>
         </div>
       </div>
       <div id="team" style={{ height: "200vh" }}>
@@ -204,19 +197,21 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
           <h1> Team </h1>
           <br></br><br></br>
 
-          <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752608/GEMDAM/mario_vvix9l.png" />
-          <h3>Mario Hinostroza</h3>
-          CO-FOUNDER & CEO <br></br>
-          Programador, diseñador multimedia,
-          tester de videojuegos y un estratega
-          en la tecnología para mejorar la experiencia de vida.
+          <div className="container-team">
+            <div>
+              <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752608/GEMDAM/mario_vvix9l.png" />
+              <a target="_blank" href="https://www.linkedin.com/in/mario-hinostroza/"> <h3>Mario Hinostroza <br></br> <b>CEO</b> <br></br> <b>DEVELOPER</b> </h3></a>
+              Programador, diseñador multimedia,
+              tester de videojuegos y un estratega
+              en la tecnología para mejorar la experiencia de vida.
+            </div>
 
-          <br></br><br></br>
-
-          <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752609/GEMDAM/rori_mzbthw.jpg" />
-          <h3>Rodrigo Isasmendi</h3>
-          CO-FOUNDER & ENVIRONMENT ARTIST <br></br>
-          Diseñador Multimedia, Environment Artist y diseñador de experiencias.
+            <div>
+              <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752609/GEMDAM/rori_mzbthw.jpg" />
+              <a target="_blank" href="https://www.linkedin.com/in/rodrigoisasmendi/"> <h3>Rodrigo Isasmendi <br></br> <b>CO-FOUNDER</b> <br></br> <b>ENVIRONMENT ARTIST</b></h3></a>
+              Diseñador Multimedia, Environment Artist y diseñador de experiencias.
+            </div>
+          </div>
         </div>
       </div>
       <div id="aumented" style={{ height: "200vh" }}>
@@ -234,10 +229,13 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <div class="dot">
           <h1>Virtual Reality</h1>
           <br></br><br></br>
-          La realidad virtual es un entorno digital inmersivo en el cual podemos sumergirnos a través de cascos o gafas de realidad virtual y la ayuda de otros dispositivos,
-          para vivir experiencias únicas, al igual que simulaciones de entornos y situaciones hasta donde llegue tu imaginación. Es un nuevo medio
-          para la creación de contenido y un nuevo canal de comunicación, por lo que es una opción nueva e ideal para la optimización de las comunicaciones tanto internas
-          como externas de una empresa,facilitando el desarrollo de actividades, además de reducir sus tiempos y costos.
+          <p>La realidad virtual es una tecnología innovadora, un nuevo medio para la creación de contenido y
+            un nuevo canal de comunicación, por lo que es una opción nueva e ideal para la optimización de las
+            comunicaciones tanto internas como externas de una empresa, facilitando el desarrollo de actividades,
+            además de reducir sus tiempos y costos.</p>
+          <p>Esta tecnología puede explotarse en una amplia variedad de formatos
+            y propuestas que se adapten a la necesidad de cada cliente </p>
+          <p><b>¿Cuál es tu idea para tu negocio?</b></p>
         </div>
       </div>
       {/* DESARROLLO WEB */}
@@ -246,7 +244,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
           <h1>Desarrollo Web</h1>
           <br></br>
           <p> A partir de un desarrollo web a medida puedes diferenciar y colocar tu empresa
-            en una posición de ventaja respecto a la competencia, y optimizar la obtención de beneficios</p>
+            en una posición de ventaja respecto a la competencia, y optimizar la obtención de beneficios.</p>
         </div>
       </div>
       <div id="contacto" style={{ height: "200vh" }}>
@@ -277,10 +275,12 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       </div>
     </div>
 
-    <div className="scroll-to-view">
-      <p>Scroll para continuar</p>
-      <RxDoubleArrowDown />
-    </div>
+    {scroll.current < 0.05 ?
+      <div className="scroll-to-view">
+        <p>Scroll para continuar</p>
+        <RxDoubleArrowDown />
+      </div> : ''
+    }
 
   </div>
 ))
