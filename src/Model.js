@@ -13,6 +13,7 @@ export default function Model({ scroll, ...props }) {
   const { actions } = useAnimations(animations, group)
 
   const modelito = props.setShowComponent;
+  console.log(modelito)
 
   const [hovered, set] = useState()
   const extras = { receiveShadow: true, castShadow: true, "material-envMapIntensity": 0.2 }
@@ -37,6 +38,9 @@ export default function Model({ scroll, ...props }) {
 
   const handleClick = (e) => {
     modelito(e.object.name);
+    console.log(modelito)
+
+    e.stopPropagation();
   };
 
   return (
@@ -51,9 +55,9 @@ export default function Model({ scroll, ...props }) {
           <mesh onClick={(e) => handleClick(e)} name="Headphones" geometry={nodes.Headphones.geometry} material={materials.M_Headphone} {...extras} />
           <mesh onClick={(e) => handleClick(e)} name="Notebook" geometry={nodes.Notebook.geometry} material={materials.M_Notebook} {...extras} />
           <mesh name="Rocket003" geometry={nodes.Rocket003.geometry} material={materials.M_Rocket} {...extras} />
-          <mesh name="Roundcube001" geometry={nodes.Roundcube001.geometry} material={materials.M_Roundcube} {...extras} />
+          <mesh onClick={(e) => handleClick(e)} name="Roundcube001" geometry={nodes.Roundcube001.geometry} material={materials.M_Roundcube} {...extras} />
           <mesh onClick={(e) => handleClick(e)} name="Table" geometry={nodes.Table.geometry} material={materials.M_Table} {...extras} />
-          <mesh onClick={(e) => handleClick(e)} name="VR_Headset" geometry={nodes.VR_Headset.geometry} material={materials.M_Headset} {...extras} />
+          <mesh name="VR_Headset" geometry={nodes.VR_Headset.geometry} material={materials.M_Headset} {...extras} />
           <mesh name="Zeppelin" geometry={nodes.Zeppelin.geometry} material={materials.M_Zeppelin} />
 
         </group>

@@ -59,6 +59,7 @@ function Formulario() {
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
             <input
+              autocomplete="off"
               className="input-contacto"
               {...field}
               locale={locale}
@@ -67,15 +68,16 @@ function Formulario() {
             />
           )}
         />
-        {errors.nombre && (<p className="error">Campo requerido</p>)}
+        {errors.nombre && (<p className="error">Campo requerido.</p>)}
 
         <Controller
           name="telefono"
-          type="number"
           control={control}
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
             <input
+              type="number"
+              autocomplete="off"
               className="input-contacto"
               {...field}
               locale={locale}
@@ -84,7 +86,7 @@ function Formulario() {
             />
           )}
         />
-        {errors.telefono && (<p className="error">Campo requerido</p>)}
+        {errors.telefono && (<p className="error">Ingrese su teléfono.</p>)}
 
         <Controller
           name="email"
@@ -93,15 +95,20 @@ function Formulario() {
           render={({ field: { ref, ...field } }) => (
             <input
               type="email"
+              autocomplete="off"
               className="input-contacto"
               {...field}
               locale={locale}
               placeholder="Correo electrónico"
               inputRef={ref}
+              {...register("email", {
+                required: true,
+                pattern: /^\S+@\S+$/i
+              })}
             />
           )}
         />
-        {errors.email && (<p className="error">Campo requerido</p>)}
+        {errors.email && (<p className="error">Ingrese un email.</p>)}
 
         <Controller
           name="empresa"
@@ -109,6 +116,7 @@ function Formulario() {
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
             <input
+              autocomplete="off"
               className="input-contacto"
               {...field}
               locale={locale}
@@ -117,7 +125,7 @@ function Formulario() {
             />
           )}
         />
-        {errors.empresa && (<p className="error">Campo requerido</p>)}
+        {errors.empresa && (<p className="error">Campo requerido.</p>)}
 
         <Controller
           name="asunto"
@@ -125,6 +133,7 @@ function Formulario() {
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
             <input
+              autocomplete="off"
               className="input-contacto"
               {...field}
               locale={locale}
@@ -133,7 +142,7 @@ function Formulario() {
             />
           )}
         />
-        {errors.asunto && (<p className="error">Campo requerido</p>)}
+        {errors.asunto && (<p className="error">Ingrese su consulta.</p>)}
 
         <Controller
           name="mensaje"
@@ -141,6 +150,7 @@ function Formulario() {
           rules={{ required: true }}
           render={({ field: { ref, ...field } }) => (
             <textarea
+              autocomplete="off"
               className="input-contacto area"
               {...field}
               locale={locale}
@@ -149,7 +159,7 @@ function Formulario() {
             ></textarea>
           )}
         />
-        {errors.mensaje && (<p className="error">Campo requerido</p>)}
+        {errors.mensaje && (<p className="error">Campo requerido.</p>)}
         <br></br>
 
 
@@ -202,8 +212,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
               <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752608/GEMDAM/mario_vvix9l.png" />
               <a target="_blank" href="https://www.linkedin.com/in/mario-hinostroza/"> <h3>Mario Hinostroza <br></br> <b>CEO</b> <br></br> <b>DEVELOPER</b> </h3></a>
               Programador, diseñador multimedia,
-              tester de videojuegos y un estratega
-              en la tecnología para mejorar la experiencia de vida.
+              tester de videojuegos.
             </div>
 
             <div>
@@ -216,25 +225,22 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       </div>
       <div id="aumented" style={{ height: "200vh" }}>
         <div class="dot">
-          <h1>Augmented Reality</h1>
+          <h1>Augmented <br></br> Reality</h1>
           <br></br><br></br>
-          La realidad aumentada tiene infinidad de aplicaciones con las que se innova día tras día y se logra llevar proyectos y empresas a un mayor desempeño.
-          La principal ventaja de la realidad aumentada yace en la facilidad que ésta otorga para el intercambio de información entre sus usuarios, ya sea entre la empresa y sus trabajadores,
-          o hacia los clientes, ya que permite la visualización de información en tiempo real sobre el mismo entorno, facilitando tareas, explicaciones y procesos de comunicación.
-          Además esta tecnología crea un nuevo canal de comunicación donde los clientes pueden interactuar en tiempo real con sus productos, servicios y experiencias que serán recordadas
-          con mayor facilidad por los clientes y crearán mayor conexión debido a su inmersividad y originalidad.
+          La realidad aumentada es la superposición de elementos
+          visuales virtuales sobre el mundo real de manera contextualizada,
+          a través de la tecnología y el uso de una amplia gama de dispositivos
+          mayormente móviles.
         </div>
       </div>
       <div id="virtual" style={{ height: "200vh" }}>
         <div class="dot">
-          <h1>Virtual Reality</h1>
-          <br></br><br></br>
+          <h1>Virtual <br></br> Reality</h1>
+          <br></br>
           <p>La realidad virtual es una tecnología innovadora, un nuevo medio para la creación de contenido y
             un nuevo canal de comunicación, por lo que es una opción nueva e ideal para la optimización de las
             comunicaciones tanto internas como externas de una empresa, facilitando el desarrollo de actividades,
             además de reducir sus tiempos y costos.</p>
-          <p>Esta tecnología puede explotarse en una amplia variedad de formatos
-            y propuestas que se adapten a la necesidad de cada cliente </p>
           <p><b>¿Cuál es tu idea para tu negocio?</b></p>
         </div>
       </div>
@@ -250,10 +256,10 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       <div id="contacto" style={{ height: "200vh" }}>
         <div class="dot">
           <h1>Contacto</h1>
-          <br></br><br></br>
+          <br></br>
           <Formulario />
           <div className="copyright">
-            © 2023, GEMDAM STUDIO. Todos los derechos reservados.
+            ©2023
           </div>
         </div>
       </div>

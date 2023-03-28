@@ -16,6 +16,44 @@
     overflow-y: hidden !important;
 }
 
+.fondito{
+    background-color: rgba(39,44,54,.3);
+    background-color: var(--rs-bg-backdrop);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1049;
+}
+
+.primero {
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+}
+
+.segundo {
+    display: none;
+    margin: 30px auto 0;
+    outline: 0;
+    overflow: visible;
+    position: relative;
+    width: auto;
+    z-index: 1050;
+}
+
+[tabindex="-1"] {
+    outline: none;
+}
+
+
+
+
 .container-title {
     display: flex;
     flex-direction: row;
@@ -107,7 +145,7 @@
     height: 450px;
     object-fit: cover;
     border-radius: 30px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+    /* box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px; */
     filter: grayscale(0.9);
     transition: transform .5s ease;
 }
@@ -123,7 +161,7 @@
 
 .button-close {
     filter: invert();
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 300;
     text-shadow: 0 0 5px rgb(131 131 131 / 50%);
 }
@@ -245,7 +283,8 @@
     }
 
     .text {
-        margin: 30px;
+        margin: 0px;
+        padding: 30px;
     }
 
     .caption {

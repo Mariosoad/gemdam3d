@@ -15,10 +15,7 @@ export default function ModalNosotros(props) {
 
     const modelito = props.setShowComponent;
     const mobile = useMediaQuery({ query: '(max-width: 700px)' })
-    const handleClose = (e) => {
-        modelito(false);
-    };
-    console.log(mobile)
+ 
     return (
         <>
             <div className='container-info'>

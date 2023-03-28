@@ -64,6 +64,15 @@ body,
   scroll-snap-align: start;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 .caption {
   pointer-events: none;
@@ -77,13 +86,14 @@ body,
   line-height: 1em;
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: auto;
+  z-index: 9999;
 }
 
 .dot {
   position: sticky;
   top: 0px;
   display: inline-block;
-  max-width: 60%;
+  max-width: 50%;
   padding: 0;
   padding: 50px;
   color: #c5c5c5;
@@ -162,6 +172,15 @@ body,
   margin: 0;
   margin-bottom: 0.25em;
   text-shadow: 0 0 6px rgb(0, 255, 247);
+}
+
+/*ACTIVE & DESACTIVE EVENTS*/
+.off-event{
+  pointer-events: none !important;
+}
+
+.on-event{
+  pointer-events: auto;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -384,11 +403,11 @@ body,
 .copyright {
   z-index: 99999;
   pointer-events: auto;
-  margin-top: 80px;
+  margin-top: 40px;
   font-size: 0.7em;
   color: #c5c5c5;
   text-shadow: 0 0 5px rgb(131 131 131 / 50%);
-  text-align: center;
+  text-align: left;
 }
 
 @media only screen and (max-width: 768px) {
