@@ -13,7 +13,8 @@ export default function Model({ scroll, ...props }) {
   const { actions } = useAnimations(animations, group)
 
   const modelito = props.setShowComponent;
-  console.log(modelito)
+  const valorModal = props.setOpen;  
+  console.log(valorModal)
 
   const [hovered, set] = useState()
   const extras = { receiveShadow: true, castShadow: true, "material-envMapIntensity": 0.2 }
@@ -21,8 +22,9 @@ export default function Model({ scroll, ...props }) {
   useEffect(() => {
     // if (hovered) group.current.getObjectByName(hovered).material.color.set("white")
     document.body.style.cursor = hovered ? "pointer" : "auto"
-
+    document.body.style.cursor != hovered && "auto"
   }, [hovered])
+
   useFrame((state) => {
     actions["CameraAction.005"].time = THREE.MathUtils.lerp(actions["CameraAction.005"].time, actions["CameraAction.005"].getClip().duration * scroll.current, 0.05)
     group.current.children[0].children.forEach((child, index) => {
@@ -38,8 +40,7 @@ export default function Model({ scroll, ...props }) {
 
   const handleClick = (e) => {
     modelito(e.object.name);
-    console.log(modelito)
-
+    valorModal(true)
     e.stopPropagation();
   };
 

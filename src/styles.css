@@ -93,7 +93,8 @@ input[type=number] {
   position: sticky;
   top: 0px;
   display: inline-block;
-  max-width: 50%;
+  max-width: 40%;
+  width: 90%;
   padding: 0;
   padding: 50px;
   color: #c5c5c5;
@@ -103,9 +104,47 @@ input[type=number] {
   letter-spacing: 1.5px;
 }
 
+.swiper-pagination-bullet{
+  background: white !important;
+}
+
+.swiper-pagination-bullet-active{
+  background: #2cddcf !important;
+}
+
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 2px !important;
+}
+
 .caption .enlace-pages {
   position: relative;
   z-index: 99999;
+}
+
+.container-copyright{
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 50px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 100;
+  line-height: 1em;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: auto;
+  z-index: 9999;
+}
+
+.copyright {
+  z-index: 99999;
+  pointer-events: auto;
+  font-size: 0.7em;
+  color: #c5c5c5;
+  text-shadow: 0 0 5px rgb(131 131 131 / 50%);
+  text-align: left;
 }
 
 .enlace-pages {
@@ -117,7 +156,7 @@ input[type=number] {
 }
 
 .enlace-pages a {
-  font-size: 0.8em;
+  font-size: 1em;
   color: #c5c5c5 !important;
   text-decoration: none !important;
   pointer-events: auto;
@@ -129,11 +168,11 @@ input[type=number] {
   pointer-events: none;
   color: #2cddcf;
   font-size: 5em;
-  font-weight: 100;
+  font-weight: 100 !important;
   line-height: 1em;
   margin: 0;
   margin-bottom: 0.25em;
-  margin-left: -6px;
+  /* margin-left: -6px; */
 }
 
 .dot .tittle-gemdam {
@@ -332,7 +371,7 @@ input[type=number] {
 
 .input-contacto {
   width: 100%;
-  height: 35px;
+  height: 45px;
   color: #c5c5c5;
   border: none !important;
   background-color: transparent !important;
@@ -398,16 +437,6 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
-}
-
-.copyright {
-  z-index: 99999;
-  pointer-events: auto;
-  margin-top: 40px;
-  font-size: 0.7em;
-  color: #c5c5c5;
-  text-shadow: 0 0 5px rgb(131 131 131 / 50%);
-  text-align: left;
 }
 
 @media only screen and (max-width: 768px) {

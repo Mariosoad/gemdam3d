@@ -189,7 +189,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       <div id="gemdam" style={{ height: "400vh" }}>
         <div class="dot">
           <h1 className="tittle-gemdam"> GEMDAM </h1>
-          <br></br><br></br>
+          <br></br>
           <p className="subtittle">Creamos soluciones útiles, creativas e innovadoras que resuelvan todo
             tipo de problemas y se ajusten a tus requisitos.</p>
         </div>
@@ -210,7 +210,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
           <div className="container-team">
             <div>
               <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752608/GEMDAM/mario_vvix9l.png" />
-              <a target="_blank" href="https://www.linkedin.com/in/mario-hinostroza/"> <h3>Mario Hinostroza <br></br> <b>CEO</b> <br></br> <b>DEVELOPER</b> </h3></a>
+              <a target="_blank" href="https://www.linkedin.com/in/mario-hinostroza/">
+                <h3>Mario Hinostroza <br></br> <b>CEO</b> <br></br> <b>DEVELOPER</b> </h3></a>
               Programador, diseñador multimedia,
               tester de videojuegos.
             </div>
@@ -225,7 +226,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       </div>
       <div id="aumented" style={{ height: "200vh" }}>
         <div class="dot">
-          <h1>Augmented <br></br> Reality</h1>
+          <h1>Augmented Reality</h1>
           <br></br><br></br>
           La realidad aumentada es la superposición de elementos
           visuales virtuales sobre el mundo real de manera contextualizada,
@@ -235,13 +236,13 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       </div>
       <div id="virtual" style={{ height: "200vh" }}>
         <div class="dot">
-          <h1>Virtual <br></br> Reality</h1>
+          <h1>Virtual Reality</h1>
           <br></br>
           <p>La realidad virtual es una tecnología innovadora, un nuevo medio para la creación de contenido y
             un nuevo canal de comunicación, por lo que es una opción nueva e ideal para la optimización de las
             comunicaciones tanto internas como externas de una empresa, facilitando el desarrollo de actividades,
             además de reducir sus tiempos y costos.</p>
-          <p><b>¿Cuál es tu idea para tu negocio?</b></p>
+          {/* <p><b>¿Cuál es tu idea para tu negocio?</b></p> */}
         </div>
       </div>
       {/* DESARROLLO WEB */}
@@ -258,9 +259,6 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
           <h1>Contacto</h1>
           <br></br>
           <Formulario />
-          <div className="copyright">
-            ©2023
-          </div>
         </div>
       </div>
     </div>
@@ -268,6 +266,13 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     {/* <span class="caption" ref={caption}>
       0.00
     </span> */}
+
+
+    <div className="container-copyright">
+      <div className="copyright">
+        ©2023
+      </div>
+    </div>
 
     <div class="caption" >
       <div className="enlace-pages">
