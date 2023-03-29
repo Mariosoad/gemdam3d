@@ -8,7 +8,7 @@
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(100px);
+    /* backdrop-filter: blur(10px); */
     background: rgba(0, 0, 0, 0.40);
     color: white !important;
     transform: none !important;
