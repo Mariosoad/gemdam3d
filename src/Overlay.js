@@ -183,7 +183,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
     caption.current.innerText = scroll.current.toFixed(2)
   }}
-    class="scroll">
+  className="scroll">
 
     <div>
       <div id="gemdam" style={{ height: "400vh" }}>
