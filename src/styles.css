@@ -92,7 +92,7 @@ input[type=number] {
   position: sticky;
   top: 0px;
   display: inline-block;
-  max-width: 40%;
+  max-width: 50%;
   width: 90%;
   padding: 0;
   padding: 50px;
@@ -221,10 +221,31 @@ input[type=number] {
   pointer-events: auto;
 }
 
+.container-team {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+.container-team a{
+  text-decoration: none !important;
+  color: #a9a9a9 !important;
+}
+
+.container-team h3{
+  font-size: 1.5em;
+}
+
+.container-team a:hover{
+  text-decoration: none !important;
+  color: #2cddcf !important;
+}
+
 @media only screen and (max-width: 1000px) {
   .container-team {
     flex-direction: column;
   }
+
 
   .dot {
     max-width: 100%;

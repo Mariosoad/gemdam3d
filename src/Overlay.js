@@ -181,7 +181,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
 
   <div ref={ref} onScroll={(e) => {
     scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
-    caption.current.innerText = scroll.current.toFixed(2)
+    // caption.current.innerText = scroll.current.toFixed(2)
   }}
   className="scroll">
 
@@ -219,7 +219,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
             <div>
               <img className="foto-founder" width={100} height={100} src="https://res.cloudinary.com/deushkfkk/image/upload/v1674752609/GEMDAM/rori_mzbthw.jpg" />
               <a target="_blank" href="https://www.linkedin.com/in/rodrigoisasmendi/"> <h3>Rodrigo Isasmendi <br></br> <b>CO-FOUNDER</b> <br></br> <b>ENVIRONMENT ARTIST</b></h3></a>
-              Diseñador Multimedia, Environment Artist y diseñador de experiencias.
+              Diseñador multimedia, environment artist y diseñador de experiencias.
             </div>
           </div>
         </div>

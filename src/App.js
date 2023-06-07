@@ -1,17 +1,17 @@
 import React, { Suspense, useState, useRef, useEffect } from "react"
 import { Canvas } from "@react-three/fiber"
-import { Environment, Html } from "@react-three/drei"
+import { Environment } from "@react-three/drei"
 import Model from "./Model"
 import Overlay from "./Overlay"
 
-import ModalGemdam from "./DataModal/ModalGemdam"
+//import ModalGemdam from "./DataModal/ModalGemdam"
 import ModalNosotros from "./DataModal/ModalNosotros"
 import ModalWeb from "./DataModal/ModalWeb"
 import ModalAr from "./DataModal/ModalAr"
 import ModalVR from "./DataModal/ModalVr"
 
-import ModalInfo from "./DataModal/ModalInfo"
-import Slider from "./DataModal/Slider"
+//import ModalInfo from "./DataModal/ModalInfo"
+//import Slider from "./DataModal/Slider"
 
 // import 'rsuite/dist/rsuite.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -49,7 +49,7 @@ export default function App() {
         <ambientLight intensity={1} />
         <Suspense fallback={null}>
           <Model scroll={scroll} setShowComponent={setShowComponent} setOpen={setOpen} />
-          <Environment preset="city" />
+          <Environment  files="./empty_warehouse_01_1k.hdr" />
         </Suspense>
       </Canvas>
 
