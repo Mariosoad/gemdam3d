@@ -1,26 +1,39 @@
-import React, { useState, forwardRef } from "react"
+import React, { forwardRef } from "react"
 import fotoRodri from "./media/rori.jpg"
 import fotoMario from "./media/mario.png"
+import { toast } from 'react-toastify';
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import { RxDoubleArrowDown } from 'react-icons/rx';
 
-var mensajeFormulario = false;
-
+let mensajeFormulario = false;
 function enviarMail(data) {
 
   axios.post("https://gemdam.com/webApi/public/contacto", data)
     .then(function (response) {
       console.log(response.data);
-      mensajeFormulario = true;
-      setTimeout(() => {
-        mensajeFormulario = false;
-      }, 6000);
+      if (response.data.message == "email Enviado!") {
+        //mensajeFormulario = true;
+        toast('Mensaje enviado!', {
+          position: "bottom-center",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }
+      // mensajeFormulario = true;
+      // setTimeout(() => {
+      //   mensajeFormulario = false;
+      // }, 6000);
     })
-    .catch(function (error) {
-      console.log(error);
-      mensajeFormulario = false;
-    });
+  // .catch(function (error) {
+  //   console.log(error);
+  //    mensajeFormulario = false;
+  // });
 }
 
 function Formulario() {
@@ -163,15 +176,15 @@ function Formulario() {
         <br></br>
 
 
-        {mensajeFormulario == true ?
+        {/* {mensajeFormulario == true ?
           <div className="container-enviar">
             <p className="subtittle"> Mensaje enviado! </p>
           </div>
-          :
-          <div className="container-enviar">
-            <button className="button-enviar" type="submit" > Enviar </button>
-          </div>
-        }
+          : */}
+        <div className="container-enviar">
+          <button className="button-enviar" type="submit" > Enviar </button>
+        </div>
+
       </form>
     </>
   )
@@ -183,7 +196,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
     // caption.current.innerText = scroll.current.toFixed(2)
   }}
-  className="scroll">
+    className="scroll">
 
     <div>
       <div id="gemdam" style={{ height: "400vh" }}>

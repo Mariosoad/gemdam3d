@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useRef, useEffect } from "react"
 import { Canvas } from "@react-three/fiber"
 import { Environment } from "@react-three/drei"
+import { ToastContainer } from 'react-toastify';
 import Model from "./Model"
 import Overlay from "./Overlay"
 
@@ -15,7 +16,7 @@ import ModalVR from "./DataModal/ModalVr"
 
 // import 'rsuite/dist/rsuite.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
   const overlay = useRef()
@@ -34,7 +35,7 @@ export default function App() {
       }
 
       {showComponent == "Roundcube001" &&
-        <ModalAr setShowComponent={setShowComponent}  setOpen={setOpen} />
+        <ModalAr setShowComponent={setShowComponent} setOpen={setOpen} />
       }
 
       {showComponent == "Table" &&
@@ -42,21 +43,34 @@ export default function App() {
       }
 
       {showComponent == "Notebook" &&
-        <ModalWeb setShowComponent={setShowComponent}  setOpen={setOpen} />
+        <ModalWeb setShowComponent={setShowComponent} setOpen={setOpen} />
       }
 
       <Canvas shadows eventSource={document.getElementById("root")} eventPrefix="client">
         <ambientLight intensity={1} />
         <Suspense fallback={null}>
           <Model scroll={scroll} setShowComponent={setShowComponent} setOpen={setOpen} />
-          <Environment  files="./empty_warehouse_01_1k.hdr" />
+          <Environment files="./empty_warehouse_01_1k.hdr" />
         </Suspense>
       </Canvas>
 
       {showComponent == false &&
         <Overlay ref={overlay} caption={caption} scroll={scroll} />
       }
-
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </>
   )
 }
