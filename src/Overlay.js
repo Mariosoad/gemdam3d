@@ -4,7 +4,6 @@ import fotoMario from "./media/mario.png"
 import { toast } from 'react-toastify';
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
-import { RxDoubleArrowDown } from 'react-icons/rx';
 
 let mensajeFormulario = false;
 function enviarMail(data) {
@@ -298,13 +297,6 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <a href="#contacto" className="hoverUnderlineAnim">Contacto</a> <br></br>
       </div>
     </div>
-
-    {scroll.current < 0.05 ?
-      <div className="scroll-to-view">
-        <p>Scroll para continuar</p>
-        <RxDoubleArrowDown />
-      </div> : ''
-    }
 
   </div>
 ))

@@ -3,7 +3,7 @@ import { Text, Html } from "@react-three/drei";
 
 import React, { useEffect, useRef, useState } from "react"
 import { useGLTF, useFBX, useAnimations, PerspectiveCamera } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
+import { useFrame, extend, Canvas } from "@react-three/fiber"
 
 const color = new THREE.Color()
 
@@ -13,16 +13,25 @@ export default function Model({ scroll, ...props }) {
   const { actions } = useAnimations(animations, group)
 
   const modelito = props.setShowComponent;
-  const valorModal = props.setOpen;  
+  const valorModal = props.setOpen;
   console.log(valorModal)
 
   const [hovered, set] = useState()
   const extras = { receiveShadow: true, castShadow: true, "material-envMapIntensity": 0.2 }
   useEffect(() => void (actions["CameraAction.005"].play().paused = true), [])
+
+  let elements = document.getElementsByClassName("scroll");
   useEffect(() => {
     // if (hovered) group.current.getObjectByName(hovered).material.color.set("white")
     document.body.style.cursor = hovered ? "pointer" : "auto"
     document.body.style.cursor != hovered && "auto"
+  for (let i = 0; i < elements.length; i++) {
+    if(hovered){
+      elements[i].classList.add("tuhermana");
+    }else{
+      elements[i].classList.remove("tuhermana");
+    }
+  }
   }, [hovered])
 
   useFrame((state) => {
@@ -44,6 +53,18 @@ export default function Model({ scroll, ...props }) {
     e.stopPropagation();
   };
 
+  const [hoveredObject, setHoveredObject] = useState(null);
+
+  const handlePointerOver = (e) => {
+    console.log(e.object.name)
+    setHoveredObject(e.object.name);
+  };
+
+  const handlePointerOut = (e) => {
+    e.stopPropagation();
+    setHoveredObject(null);
+  };
+
   return (
     <>
       <group ref={group} {...props} dispose={null}>
@@ -58,7 +79,8 @@ export default function Model({ scroll, ...props }) {
           <mesh name="Rocket003" geometry={nodes.Rocket003.geometry} material={materials.M_Rocket} {...extras} />
           <mesh onClick={(e) => handleClick(e)} name="Roundcube001" geometry={nodes.Roundcube001.geometry} material={materials.M_Roundcube} {...extras} />
           <mesh onClick={(e) => handleClick(e)} name="Table" geometry={nodes.Table.geometry} material={materials.M_Table} {...extras} />
-          <mesh name="VR_Headset" geometry={nodes.VR_Headset.geometry} material={materials.M_Headset} {...extras} />
+          <mesh onPointerOver={(e) =>handlePointerOver(e)}
+            onPointerOut={(e) =>handlePointerOut(e)} name="VR_Headset" geometry={nodes.VR_Headset.geometry} material={materials.M_Headset} {...extras} />
           <mesh name="Zeppelin" geometry={nodes.Zeppelin.geometry} material={materials.M_Zeppelin} />
 
         </group>
@@ -80,22 +102,33 @@ export default function Model({ scroll, ...props }) {
         </group>
       </group>
 
-      {/* <group>
-        <Html occlude >
-          <div className="container-info">
-            <h1>Nosotros</h1>
-            <br></br><br></br>
-            Somos una compañía dinámica y experta en la creación de experiencias digitales que busca transformar la comunicación estratégica dentro de las empresas
-            y en relación con sus clientes, para dar un salto de calidad en el ámbito cognitivo. Para esto desarrollamos propuestas capaces de mejorar los resultados
-            comerciales de cada marca y su relevancia, mediante un mejor posicionamiento en el mercado y un crecimiento de valor a lo largo de su ciclo de vida.
-            <ul>
-              <li>Valoramos la diversidad en un entorno abierto e inclusivo donde fomentamos la confianza y el trato respetuoso hacia cada individuo.</li><br></br>
-              <li>Ayudamos a nuestros clientes a establecerse como grandes empresas de valor y relevancia, capaces de crear relaciones fructíferas a largo plazo.</li><br></br>
-              <li>Acompañamos cada proyecto desde su inicio, partiendo de etapas de asesoramiento y desarrollo, hasta su lanzamiento, estando presentes a cada momento para brindar respuestas eficaces.</li>
-            </ul>
-          </div>
-        </Html>
-      </group> */}
+      {/* {hoveredObject == "VR_Headset" && (
+        //alert("TU HERMANAAA")
+        <group>
+          <Html occlude style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%"
+        }}>
+            <div className="container-info">
+              <h1>Nosotros</h1>
+              <br></br><br></br>
+              Somos una compañía dinámica y experta en la creación de experiencias digitales que busca transformar la comunicación estratégica dentro de las empresas
+              y en relación con sus clientes, para dar un salto de calidad en el ámbito cognitivo. Para esto desarrollamos propuestas capaces de mejorar los resultados
+              comerciales de cada marca y su relevancia, mediante un mejor posicionamiento en el mercado y un crecimiento de valor a lo largo de su ciclo de vida.
+              <ul>
+                <li>Valoramos la diversidad en un entorno abierto e inclusivo donde fomentamos la confianza y el trato respetuoso hacia cada individuo.</li><br></br>
+                <li>Ayudamos a nuestros clientes a establecerse como grandes empresas de valor y relevancia, capaces de crear relaciones fructíferas a largo plazo.</li><br></br>
+                <li>Acompañamos cada proyecto desde su inicio, partiendo de etapas de asesoramiento y desarrollo, hasta su lanzamiento, estando presentes a cada momento para brindar respuestas eficaces.</li>
+              </ul>
+            </div>
+          </Html>
+        </group>
+      )} */}
+
+
     </>
 
   )

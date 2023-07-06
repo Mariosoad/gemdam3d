@@ -1,5 +1,6 @@
 import React from 'react'
 import { GrClose } from 'react-icons/gr';
+import "./Modal.css"
 
 
 export default function ModalGemdam(props) {

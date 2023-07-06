@@ -10,6 +10,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 // import required modules
+import "./Modal.css"
 import { Mousewheel, Pagination } from "swiper";
 
 export default function ModalWeb(props) {

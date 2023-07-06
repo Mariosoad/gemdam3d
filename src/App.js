@@ -4,6 +4,7 @@ import { Environment } from "@react-three/drei"
 import { ToastContainer } from 'react-toastify';
 import Model from "./Model"
 import Overlay from "./Overlay"
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 //import ModalGemdam from "./DataModal/ModalGemdam"
 import ModalNosotros from "./DataModal/ModalNosotros"
@@ -26,7 +27,27 @@ export default function App() {
   const [showComponent, setShowComponent] = useState(false);
   const [open, setOpen] = useState(false);
 
-  console.log(open)
+  //console.log(open)
+
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const springConfig = { damping: 55, stiffness: 1300 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+
+  useEffect(() => {
+    const moveCursor = (e) => {
+      cursorX.set(e.clientX - 16);
+      cursorY.set(e.clientY - 16);
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
+  }, []);
 
   return (
     <>
@@ -71,6 +92,14 @@ export default function App() {
       />
       {/* Same as */}
       <ToastContainer />
+  
+      <motion.div
+        className="cursor"
+        style={{
+          translateX: cursorXSpring,
+          translateY: cursorYSpring,
+        }}
+      />
     </>
   )
 }
